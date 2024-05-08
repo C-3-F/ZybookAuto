@@ -135,9 +135,11 @@ def solve_section(section, code, chapter, auth):
 def main():
     global t_spfd
     # Sign in to ZyBooks
-    response = signin(cfg.USR, cfg.PWD)
-    auth = response["session"]["auth_token"]
-    usr_id = response["session"]["user_id"]
+    # response = signin(cfg.USR, cfg.PWD)
+    # auth = response["session"]["auth_token"]
+    # usr_id = response["session"]["user_id"]
+    auth = cfg.AUTH_TOKEN
+    usr_id = cfg.USER_ID
     t_spfd = 0 # Keeps track of total "time_spent" sent to server
     for attempt in range(3): # Try to reauthenticate three times before giving up
         while True:
